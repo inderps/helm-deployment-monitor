@@ -1,0 +1,11 @@
+NAME         	REVISION	UPDATED                 	STATUS  	CHART              	APP VERSION	NAMESPACE   
+app          	1       	Mon Sep 23 17:19:17 2019	DEPLOYED	app-0.1.0          	1.0        	default     
+cert-manager 	1       	Mon Sep 23 15:57:53 2019	DEPLOYED	cert-manager-v0.9.0	v0.9.0     	cert-manager
+devices      	1       	Mon Sep 23 18:24:36 2019	DEPLOYED	devices-0.1.0      	1.0        	default     
+elasticsearch	1       	Mon Sep 23 16:17:32 2019	DEPLOYED	elasticsearch-0.1.0	1.0        	default     
+istio        	1       	Mon Sep 23 15:55:31 2019	DEPLOYED	istio-1.2.5        	1.2.5      	istio-system
+istio-init   	1       	Mon Sep 23 14:49:30 2019	DEPLOYED	istio-init-1.2.5   	1.2.5      	istio-system
+kafka        	1       	Mon Sep 23 14:49:29 2019	DEPLOYED	Kafka-0.1.0        	1.0        	default     
+loadbalancer 	1       	Mon Sep 23 17:25:37 2019	DEPLOYED	loadbalancer-0.1.0 	1.0        	default     
+memcached    	1       	Mon Sep 23 14:49:29 2019	DEPLOYED	memcached-0.1.0    	1.0        	default     
+nfs-server   	1       	Mon Sep 23 14:49:29 2019	DEPLOYED	nfs-server-0.1.0   	1.0        	default     
