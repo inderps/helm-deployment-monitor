@@ -2,7 +2,7 @@ const express = require('express');
 const socketio = require('socket.io');
 const http = require('http');
 const path = require('path');
-const { getControllers } = require('./kubectl');
+const { getListOfCharts } = require('./helm');
 
 const app = express();
 
@@ -14,8 +14,8 @@ const server = http.createServer(app);
 const io = socketio(server);
 
 io.on('connection', (socket) => {
-  socket.on('give-controllers', () => {
-    socket.emit('take-controllers', getControllers());
+  socket.on('getListOfCharts', () => {
+    socket.emit('getListOfChartsResponse', getListOfCharts());
   });
 });
 

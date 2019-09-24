@@ -1,10 +1,20 @@
 const childProcess = require('child_process');
 const fs = require('fs');
 
+const mockResponse = true;
+
 const saveResponseForTests = (fileName, response) => (fs.writeFile(`test/fixtures/${fileName}`, response, () => {})); // eslint-disable-line no-unused-vars
 
+const execute = (command, fileName) => {
+  if (mockResponse) {
+    return fs.readFileSync(`test/fixtures/${fileName}`, 'utf8');
+  }
+
+  return childProcess.execSync(command).toString();
+};
+
 exports.getListOfCharts = () => {
-  const listResponse = childProcess.execSync('helm ls').toString();
+  const listResponse = execute('helm ls', 'getListOfCharts');
   // Uncomment this to create brand new fixture
   // saveResponseForTests('getListOfCharts', listResponse);
   const charts = [];

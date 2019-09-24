@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
+import io from 'socket.io-client';
+import Charts from './components/Charts';
 
 export default class App extends Component {
-  state = { controllers: [] };
+  state = { charts: [] };
 
   componentDidMount() {
-    // fetch('/api/get_controllers')
-    //   .then(res => res.json())
-    //   .then(controllers => this.setState({ controllers }));
+    const socket = io.connect(window.location.host, { reconnect: true });
+    socket.on('getListOfChartsResponse', (charts) => {
+      this.setState({ charts });
+    });
+
+    socket.on('connect', () => {
+      socket.emit('getListOfCharts');
+    });
   }
 
   render() {
-    return (<div/>)
+    const { charts } = this.state;
+    return (<Charts charts={charts} />);
   }
 }
