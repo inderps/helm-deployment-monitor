@@ -2,6 +2,8 @@
 
 This is a nodejs based app to monitor helm based deployments on your kubernetes cluster.
 
+[![CircleCI](https://circleci.com/gh/inderps/helm-deployment-monitor.svg?style=svg)](https://circleci.com/gh/inderps/helm-deployment-monitor)
+
 - [helm-deployment-monitor](#helm-deployment-monitor)
   - [Introduction](#introduction)
   - [Install via Helm](#install-via-helm)
